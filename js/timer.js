@@ -1,23 +1,35 @@
 export default class CountdownTimer {
-    constructor({selector, targetDate, onTick}) {
+    constructor({selector, onTick, recordingTime}) {
         this.intervalId = null;
         this.selector = selector;
-        this.targetDate = targetDate;
+        this.isActive = false;
         this.onTick = onTick;
+        this.deltaTime = this.deltaTime;
+        this.recordingTime = recordingTime;
     }
 
     start() {
+        if (this.isActive) {
+            return;
+        }
 
-    const startTime = Date.now();
+        this.isActive = true;
 
-    this.intervalId = setInterval(() => {
-      const currentTime = Date.now();
-      const deltaTime = this.targetDate - currentTime;
-      const time = this.getTimeComponents(deltaTime);
+        this.intervalId = setInterval(() => {
+        const time = this.recordingTime();
+        this.onTick(time);
+        }, 100);
+    }
+    
+    stop() {
+        clearInterval(this.intervalId);
+        this.isActive = false;
+        const currentTime = Date.now();
+        const selectedDate = this.recordingTime();
+        localStorage.setItem('currentTime', JSON.stringify(selectedDate));
+    }
 
-      this.onTick(time);
-    }, 1000);
-  }
+    
 
 
 

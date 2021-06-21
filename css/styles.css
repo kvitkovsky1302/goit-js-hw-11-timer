@@ -2,6 +2,52 @@ body {
   background-color: indigo;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Lekton', sans-serif;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.date-description {
+  margin-bottom: 10px;
+}
+
+.date-placeholder {
+  font-family: 'Lekton', sans-serif;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 2px 4px 4px rgba(255, 255, 255, 0.35);
+  margin-bottom: 20px;
+}
+.date-placeholder::-webkit-calendar-picker-indicator:hover {
+  cursor: pointer;
+}
+
+.date-placeholder:hover,
+.date-placeholder:focus {
+  cursor: pointer;
+  background-color: #eeeeee;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .timer {
@@ -9,9 +55,9 @@ body {
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
   color: #ffffff;
   text-shadow: 0 0 20px, 0 0 20px;
+  margin-bottom: 40px;
 }
 
 .field {
@@ -19,7 +65,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Lekton', sans-serif;
+}
+
+.field:not(:last-child) {
   margin-right: 20px;
 }
 
@@ -32,4 +80,27 @@ body {
 .label {
   letter-spacing: 0.1em;
   font-size: 20px;
+}
+
+.timer-btn {
+  min-width: 200px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px rgba(255, 255, 255, 0.35);
+
+  font-size: 20px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.timer-btn:not(:last-child) {
+  margin-right: 20px;
+}
+
+.timer-btn:hover,
+.timer-btn:focus {
+  background-color: #cccccc;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
 }
