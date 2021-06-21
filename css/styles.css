@@ -1,0 +1,35 @@
+body {
+  background-color: indigo;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  color: #ffffff;
+  text-shadow: 0 0 20px, 0 0 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lekton', sans-serif;
+  margin-right: 20px;
+}
+
+.value {
+  letter-spacing: 0.05em;
+  font-size: 70px;
+  padding: 10px;
+}
+
+.label {
+  letter-spacing: 0.1em;
+  font-size: 20px;
+}
